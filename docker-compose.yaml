@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  node-hello-world:
+    hostname: "node.johan.lcl"
+    build: node
+    ports:
+        - 8080:8080
+
+  go-hello-world:
+    hostname: "go.johan.lcl"
+    build: go
+    ports:
+        - 3000:3000
