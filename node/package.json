@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/nahhoj/k8s#readme",
   "dependencies": {
+    "@grpc/proto-loader": "^0.1.0",
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
+    "grpc": "^1.11.0",
     "path": "^0.12.7"
   }
 }

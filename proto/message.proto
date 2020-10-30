@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package main;
+
+option go_package = "k8s/grpc";
+
+message MessageReq{
+    string who=1;
+}
+
+message MessageRes{
+    string iam=1;
+}
+
+service Message{
+    rpc SendMessage(MessageReq) returns (MessageRes);
+}
+
+//protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative proto/message.proto 
