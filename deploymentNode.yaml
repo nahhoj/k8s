@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodehelloworld
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nodehelloworld
+  template:
+    metadata:
+      labels:
+        app: nodehelloworld
+    spec:
+      containers:
+      - name: nodehelloworld
+        image: nahhoj/node-hello-world
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 8080
+        - containerPort: 8081
+

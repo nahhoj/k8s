@@ -31,7 +31,7 @@ func (s *Server_gRPC) SendMessage(ctx context.Context, in *pb.MessageReq) (*pb.M
 
 func main() {
 	host, _ = os.Hostname()
-	conn, _ := grpc.Dial("node.johan.lcl:8081", grpc.WithInsecure())
+	conn, _ := grpc.Dial("nodehelloworld:8081", grpc.WithInsecure())
 	client := pb.NewMessageClient(conn)
 	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
 		requ := pb.MessageReq{

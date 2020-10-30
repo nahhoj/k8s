@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gohelloworld
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: gohelloworld
+  template:
+    metadata:
+      labels:
+        app: gohelloworld
+    spec:
+      containers:
+      - name: gohelloworld
+        image: nahhoj/go-hello-world
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 3000
+        - containerPort: 3001
+
