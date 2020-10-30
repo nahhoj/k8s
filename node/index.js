@@ -33,7 +33,7 @@ gRPCserver.addService(servMessage.Message.service,{
     }
 });
 
-let client = new servMessage.Message('localhost:3001',grpc.credentials.createInsecure());
+let client = new servMessage.Message('go.johan.lcl:3001',grpc.credentials.createInsecure());
 
 gRPCserver.bind(`0.0.0.0:${portgRPCServer}`,grpc.ServerCredentials.createInsecure());
 gRPCserver.start();
